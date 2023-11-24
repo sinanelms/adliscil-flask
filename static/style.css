@@ -1,0 +1,53 @@
+/* Resizer stilini ayarlayın */
+.resizer {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: col-resize;
+  user-select: none;
+}
+
+th {
+  position: relative; /* Resizer için pozisyon referansı */
+}
+
+#editableTable thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  min-width: 120px; /* Sütunların minimum genişliğini ayarlar */
+}
+
+#editableTable tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+#editableTable tbody td,
+#editableTable thead th {
+  word-wrap: break-word; /* Uzun kelimeleri satır içinde kırar */
+  overflow: hidden; /* Hücre dışına taşan içeriği gizler */
+  text-overflow: ellipsis; /* Taşan metni "..." ile keser */
+  white-space: nowrap; /* Metni tek satırda tutar, gerekirse keser */
+  line-height: 1.5; /* Satır yüksekliğini artırır */
+}
+
+#editableTable thead,
+#editableTable tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#editableTable {
+  width: 100%;
+}
+.editable-cell {
+  font-weight: bold;
+  color: green;
+  border: 2px solid black;
+  /* Kalın siyah border */
+}
